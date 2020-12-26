@@ -46,3 +46,12 @@ h1 {
         border-bottom: none;
     }
 }
+
+.js {
+    font-weight: bold;
+    color: red;
+}
+
+#first {
+    color: green;
+}
