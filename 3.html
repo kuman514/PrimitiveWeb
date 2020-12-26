@@ -10,23 +10,30 @@
     <body>
         <h1><a href="index.html">WEB</a></h1>
         <input type="button" value="night" onclick="
-        document.querySelector('body').style.backgroundColor = 'black';
-        document.querySelector('body').style.color = 'white';
-        ">
-        <input type="button" value="day" onclick="
-        document.querySelector('body').style.backgroundColor = 'white';
-        document.querySelector('body').style.color = 'black';
-        ">
-        <input type="button" value="night" onclick="
-        if (document.querySelector('body').dataset.mode === 'night') {
-            document.querySelector('body').style.backgroundColor = 'white';
-            document.querySelector('body').style.color = 'black';
-            document.querySelector('body').dataset.mode = 'day';
+        var target = document.querySelector('body');
+        if (this.value === 'day') {
+            target.style.backgroundColor = 'white';
+            target.style.color = 'black';
+
+            var nodelist = document.querySelectorAll('a');
+            nodelist.forEach(
+                function(currentValue, currentIndex, listObj) {
+                    currentValue.style.color = 'black';
+                }
+            )
+
             this.value = 'night';
         } else {
-            document.querySelector('body').style.backgroundColor = 'black';
-            document.querySelector('body').style.color = 'white';
-            document.querySelector('body').dataset.mode = 'night';
+            target.style.backgroundColor = 'black';
+            target.style.color = 'white';
+
+            var nodelist = document.querySelectorAll('a');
+            nodelist.forEach(
+                function(currentValue, currentIndex, listObj) {
+                    currentValue.style.color = 'white';
+                }
+            )
+
             this.value = 'day';
         }
         ">
