@@ -5,38 +5,41 @@
         <title>WEB1 - JavaScript</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="style.css">
+        <script>
+            function nightDayHandler(self) {
+                var target = document.querySelector('body');
+                if (this.value === 'day') {
+                    target.style.backgroundColor = 'white';
+                    target.style.color = 'black';
+
+                    var nodelist = document.querySelectorAll('a');
+                    nodelist.forEach(
+                        function(currentValue, currentIndex, listObj) {
+                            currentValue.style.color = 'black';
+                        }
+                    )
+
+                    self.value = 'night';
+                } else {
+                    target.style.backgroundColor = 'black';
+                    target.style.color = 'white';
+
+                    var nodelist = document.querySelectorAll('a');
+                    nodelist.forEach(
+                        function(currentValue, currentIndex, listObj) {
+                            currentValue.style.color = 'white';
+                        }
+                    )
+
+                    self.value = 'day';
+                }
+            }
+        </script>
     </head>
 
     <body>
         <h1><a href="index.html">WEB</a></h1>
-        <input type="button" value="night" onclick="
-        var target = document.querySelector('body');
-        if (this.value === 'day') {
-            target.style.backgroundColor = 'white';
-            target.style.color = 'black';
-
-            var nodelist = document.querySelectorAll('a');
-            nodelist.forEach(
-                function(currentValue, currentIndex, listObj) {
-                    currentValue.style.color = 'black';
-                }
-            )
-
-            this.value = 'night';
-        } else {
-            target.style.backgroundColor = 'black';
-            target.style.color = 'white';
-
-            var nodelist = document.querySelectorAll('a');
-            nodelist.forEach(
-                function(currentValue, currentIndex, listObj) {
-                    currentValue.style.color = 'white';
-                }
-            )
-
-            this.value = 'day';
-        }
-        ">
+        <input type="button" value="night" onclick="nightDayHandler(this);">
         <div id="grid">
             <ol>
                 <li><a href="1.html">HTML</a></li>
