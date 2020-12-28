@@ -6,31 +6,33 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="style.css">
         <script>
+            function setLinkColor(color) {
+                var nodelist = document.querySelectorAll('a');
+                nodelist.forEach(
+                    function(currentValue, currentIndex, listObj) {
+                        currentValue.style.color = color;
+                    }
+                )
+            }
+
+            function setBodyColor(color) {
+                document.querySelector('body').style.color = color;
+            }
+
+            function setBackgroundColor(color) {
+                document.querySelector('body').style.backgroundColor = color;
+            }
+
             function nightDayHandler(self) {
-                var target = document.querySelector('body');
                 if (self.value === 'day') {
-                    target.style.backgroundColor = 'white';
-                    target.style.color = 'black';
-
-                    var nodelist = document.querySelectorAll('a');
-                    nodelist.forEach(
-                        function(currentValue, currentIndex, listObj) {
-                            currentValue.style.color = 'black';
-                        }
-                    )
-
+                    setBackgroundColor('white');
+                    setBodyColor('black');
+                    setLinkColor('black');
                     self.value = 'night';
                 } else {
-                    target.style.backgroundColor = 'black';
-                    target.style.color = 'white';
-
-                    var nodelist = document.querySelectorAll('a');
-                    nodelist.forEach(
-                        function(currentValue, currentIndex, listObj) {
-                            currentValue.style.color = 'white';
-                        }
-                    )
-
+                    setBackgroundColor('black');
+                    setBodyColor('white');
+                    setLinkColor('powderblue');
                     self.value = 'day';
                 }
             }
