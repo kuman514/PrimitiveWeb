@@ -23,9 +23,21 @@
         </script>
         <h2>Iterate</h2>
         <script>
-            for(var key in coworkers) {
+            for (var key in coworkers) {
                 document.write(key + ": " + coworkers[key] + "<br>");
             }
+        </script>
+        <h2>Property And Method</h2>
+        <script>
+            // variables belonging to object: property
+            // functions belonging to object: method
+            // methods are also properties
+            coworkers.showAll = function() {
+                for (var key in this) {
+                    document.write(key + ": " + coworkers[key] + "<br>");
+                }
+            }
+            coworkers.showAll();
         </script>
     </body>
 </html>
