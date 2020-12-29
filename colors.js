@@ -1,3 +1,5 @@
+var isNight = false;
+
 var Link = {
     "setColor": function (color) {
         var nodelist = document.querySelectorAll('a');
@@ -19,15 +21,17 @@ var Body = {
 }
 
 function nightDayHandler(self) {
-    if (self.value === 'day') {
+    if (isNight) {
         Body.setBackgroundColor('white');
         Body.setColor('black');
         Link.setColor('blue');
         self.value = 'night';
+        isNight = false;
     } else {
         Body.setBackgroundColor('black');
         Body.setColor('white');
         Link.setColor('powderblue');
         self.value = 'day';
+        isNight = true;
     }
 }
