@@ -2,7 +2,7 @@ function openTextFile () {
     var input = document.createElement("input");
 
     input.type = "file";
-    input.accept = "text/plain";
+    input.accept = "text/plain, text/html";
 
     input.click();
     input.onchange = function (event) {
